@@ -1,0 +1,7 @@
+.shop-container {
+    display: flex;
+    gap: 5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 8rem;
+}

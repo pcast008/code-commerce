@@ -1,0 +1,30 @@
+.cart-item-container, .cart-item-content {
+    display: flex;
+}
+
+.cart-item-container {
+    height: 6rem;
+}
+
+.cart-item-container img {
+    max-width:100%;
+    max-height:100%;
+}
+
+.cart-item-content {
+    display: flex;
+    gap: 10px;
+}
+
+.col-md-8 {
+    display: flex;
+    align-items: center;
+}
+
+.remove-cart-item {
+    border: none;
+}
+
+.col-md-8 .card-body .card-text {
+    margin: 0;
+}

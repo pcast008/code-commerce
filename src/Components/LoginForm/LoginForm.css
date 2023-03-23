@@ -1,0 +1,37 @@
+.form-container {
+    width: 100%;
+}  
+
+.separator-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .25rem;
+    padding: .5em 0;
+    width: 100%;
+}
+
+.divider {
+    background-color: #e7e7e7;
+    height: 1px;
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.divider-text {
+    color: #c0c0c0;
+}
+
+.facebook-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+#fb {
+    background-color: #3b5998;
+    color: white;
+    opacity: 1;
+}

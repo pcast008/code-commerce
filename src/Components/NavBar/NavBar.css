@@ -1,0 +1,29 @@
+.navbar-brand:hover {
+    cursor: pointer;
+}
+
+.bi-code-square {
+    pointer-events: none;
+}
+
+.bi-cart2, .bi-shop, .bi-person, .bi-person-check {
+    font-size: 1.2rem;
+}
+
+.bi-bag {
+    color: #F8F9FA;
+    font-size: xx-large;
+    position: relative;
+}
+
+.cart-quantity {
+    position: absolute;
+    top: 17px;
+    left: 1px;
+    width: 30px;
+    height: 30px;
+    font-style: normal;
+    font-size: 1rem;
+    line-height: normal;
+    text-align: center;
+}
