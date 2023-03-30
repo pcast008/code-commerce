@@ -9,3 +9,25 @@
 .card-icon-confirmation img {
     width: 100%;
 }
+
+.confirmation-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.credit-card-details {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.confirmation-details-shipping {
+    display: flex;
+    flex-direction: column;
+    gap: .25rem;
+}
+
+.details-text {
+    font-size: .8rem;
+}

@@ -9,6 +9,7 @@
     display: flex;
     gap: 3rem;
     padding: 2em;
+    flex-wrap: wrap;
 }
 
 .check-out-error-container {
@@ -18,4 +19,8 @@
     color: #b02a37;
     justify-content: center;
     padding-top: 1rem;
+}
+
+.progress {
+    margin: 0 1rem;
 }

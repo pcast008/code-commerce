@@ -5,7 +5,7 @@ import { data } from "../../data"
 
 export class Shop extends Component {
     render() {
-        const cardData = data.map((_card, index) => <ShopItem key={index + 1} addToCart={this.props.addToCart} { ...data[index] } />) 
+        const cardData = data.map((_card, index) => <ShopItem key={index + 1} addToCart={this.props.addToCart} { ...data[index] } removeFromCart={this.props.removeFromCart} findCartItem={this.props.findCartItem}  />) 
 
         return (
             <div className="shop-container">{cardData}</div>

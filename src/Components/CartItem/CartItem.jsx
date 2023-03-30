@@ -11,7 +11,7 @@ export class CartItem extends Component {
                 {btn}
                 <div className="cart-item-content">
                     <div className="cart-item-image-container">
-                        <img src={this.props.image} className="img-fluid rounded-start" alt="..."/>
+                        <img src={this.props.image} alt="..."/>
                     </div>
                     <div className="col-md-8">
                         <div className="card-body">

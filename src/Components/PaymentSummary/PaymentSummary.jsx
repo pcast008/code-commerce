@@ -19,28 +19,30 @@ export class PaymentSummary extends Component {
                 <div className="summary-line-break"></div>
                 {cartItems}
                 <div className="summary-line-break"></div>
-                <div className="promotion">
-                    <div className="promotion-item">
-                        <FormInput 
-                            id={"promotion"}
-                            type={"text"}
-                            label={"Promotion"}
-                            placeholder={"Promotion"}
-                            onChange={this.props.onChange}
-                            value={this.props.promotion}
-                            error={this.props.promotionError}
-                            onClick={() => {this.props.clearInput("promotion")}}
-                        />
+                <form action="">
+                    <div className="promotion">
+                        <div className="promotion-item">
+                            <FormInput 
+                                id={"promotion"}
+                                type={"text"}
+                                label={"Promotion"}
+                                placeholder={"Promotion"}
+                                onChange={this.props.onChange}
+                                value={this.props.promotion}
+                                error={this.props.promotionError}
+                                onClick={() => {this.props.clearInput("promotion")}}
+                            />
+                        </div>
+                        <div className="promotion-item">
+                            <Button 
+                                onClick={this.props.applyPromotion}
+                                btnClass="btn-outline-success"
+                                type="submit"
+                                buttonText="Apply"
+                            />
+                        </div>         
                     </div>
-                    <div className="promotion-item">
-                        <Button 
-                            onClick={this.props.applyPromotion}
-                            btnClass="btn-outline-success"
-                            type="button"
-                            buttonText="Apply"
-                        />
-                    </div>         
-                </div>
+                </form>
                 <div className="summary-form">
                     <div className="summary-line-break"></div>
                     <ul className="summary-items-container">

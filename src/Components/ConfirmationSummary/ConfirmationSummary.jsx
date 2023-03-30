@@ -25,20 +25,20 @@ export class ConfirmationSummary extends Component {
                         <li className="summary-item"><span>Cart Total:</span><span>{this.props.cartTotal}</span></li>
                     </ul>
                     <div className="summary-line-break"></div>
-                    <div className="">
-                        <div>
+                    <div className="confirmation-details-shipping">
+                        <div className="confirmation-details">
                             <div className="summary-title">SHIPPING</div>
-                            <div><a href="#">View Shipping Details</a></div>
+                            <div className="details-text"><a href="#">View Shipping Details</a></div>
                         </div>        
                         {parseInt(this.props.cartSH) === 5 ? <div><span>STANDARD</span> Delivery in 4-6 Business Days</div> : <div><span>EXPRESS</span> Delivery in 1-3 Business Days</div>}        
                     </div>
                     <div className="summary-line-break"></div>
-                    <div className="">
-                        <div>
+                    <div>
+                        <div className="confirmation-details">
                             <div className="summary-title">PAYMENT</div>
-                            <div><a href="#">View Payment Details</a></div>
+                            <div className="details-text"><a href="#">View Payment Details</a></div>
                         </div> 
-                        <div><div className="card-icon-confirmation"><img src={CARDICON[this.props.cardType]} alt="" /></div> {this.props.cardType} Total payment: ${this.props.cartTotal}</div>    
+                        <div className="credit-card-details"><div className="card-icon-confirmation"><img src={CARDICON[this.props.cardType]} alt="" /></div> {this.props.cardType} Total payment: ${this.props.cartTotal}</div>    
                     </div>
                 </div>     
             </div>

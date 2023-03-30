@@ -8,7 +8,7 @@ export class ConfirmationForm extends Component {
             <div className="confirmation-form-container">
                 <div className="confirmation-form-title">CONFIRMATION</div>
                 <div className="summary-line-break"></div>
-                <i class="bi bi-check2-circle"></i>
+                <i className="bi bi-check2-circle"></i>
                 <div>
                     <div className="confirmation-form-text">Congratulations!</div>
                     <div className="confirmation-form-text">Your order is complete.</div>

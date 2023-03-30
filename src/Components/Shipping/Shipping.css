@@ -9,4 +9,5 @@
     display: flex;
     gap: 3rem;
     padding: 2em;
+    flex-wrap: wrap;
 }

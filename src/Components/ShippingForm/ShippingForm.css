@@ -9,11 +9,12 @@
 .select-inputs {
     display: flex;
     gap: 1rem;
+    flex-wrap: wrap;
+    /* margin-bottom: 1rem; */
 }
 
 .select-item {
     flex: 1;
-    margin-bottom: 1rem;
 }
 
 .shipping-form-line-break {
@@ -30,6 +31,7 @@
 
 .shipping-input {
     gap: .5rem;
+    flex-wrap: wrap;
 }
 
 .back-to-cart {

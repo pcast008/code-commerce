@@ -218,7 +218,9 @@ export class App extends Component {
         }
     }
 
-    applyPromotion = () => {
+    applyPromotion = (e) => {
+        e.preventDefault();
+
         if (this.state.promotionApplied) {
             this.setState({ promotionError: `${this.state.promotionApplied} already applied!` })
 
@@ -252,7 +254,7 @@ export class App extends Component {
                         this.setState({ promotionError: "Add React to the cart!" });
                     }
                 }
-                this.updateCartPrice();
+                this.updateCartTotal();
             }
         }
     }
@@ -260,7 +262,6 @@ export class App extends Component {
     updatePromotion = () => {
         if (this.state.promotionApplied) {
             const code = this.state.promotionCodes.find(code => code.name.toLocaleLowerCase() === this.state.promotion.toLowerCase());
-            const reactExists = this.state.cart.find(item => item.id === 4);
 
             if (code.name.toLowerCase() === "DEV2023".toLowerCase()) {
                 this.setState(state => {
@@ -268,20 +269,13 @@ export class App extends Component {
                         cartDiscount: state.cartSubTotal * code.value * -1, 
                     }
                 })
-            } else if (code.name.toLowerCase() === "ONEFREEREACT".toLowerCase() && reactExists) {
+            } else if (code.name.toLowerCase() === "ONEFREEREACT".toLowerCase()) {
                 this.setState(state => {
                     return { 
                         cartDiscount: code.value * -1,
                     }
                 })            
-            } else {
-                this.setState(state => {
-                    return { 
-                        cartDiscount: "",
-                        promotionApplied: ""
-                    }
-                })  
-            }
+            } 
         } else return;
     }
 
@@ -292,7 +286,7 @@ export class App extends Component {
 
         if (name === "cartSH") {
             this.setState({ [name]: value });
-            this.updateCartPrice();
+            this.updateCartTotal();
 
         } else if (name === "cardNumber") {
             if (value.length && value.match(/[0-9]+/)) {
@@ -501,12 +495,19 @@ export class App extends Component {
         });
     }
 
-    updateCartPrice = () => {
+    updateCartSubTotal = () => {
         this.setState(state => {
             const totalPrice = state.cart.reduce((acc, cv) => (acc +=  cv.price * cv.quantity), 0);
             return { 
-                cartTotal: parseInt(totalPrice) + parseInt(state.cartSH || 0) + parseInt(state.cartDiscount || 0), 
                 cartSubTotal: totalPrice 
+            }
+        });
+    }
+
+    updateCartTotal = () => {
+        this.setState(state => {
+            return { 
+                cartTotal: parseInt(state.cartSubTotal) + parseInt(state.cartSH || 0) + parseInt(state.cartDiscount || 0), 
             }
         });
     }
@@ -534,8 +535,9 @@ export class App extends Component {
         }
 
         this.updateCartQuantity();
-        this.updateCartPrice();
+        this.updateCartSubTotal();
         this.updatePromotion();
+        this.updateCartTotal();
     }
 
     removeFromCart = (id) => {
@@ -552,7 +554,7 @@ export class App extends Component {
                 }
             })
         } 
-        else {           
+        else {
             this.setState(state => {
                 state.cart.splice(i, 1);
                 return {
@@ -560,10 +562,11 @@ export class App extends Component {
                 }
             })
         }
-
+        
         this.updateCartQuantity();
-        this.updateCartPrice();
+        this.updateCartSubTotal();
         this.updatePromotion();
+        this.updateCartTotal();
     }
 
     checkUser = (email, password, creatingAccount = false) => {
@@ -588,9 +591,35 @@ export class App extends Component {
     }
 
     signOut = () => {
-        this.setState({ 
-            loggedIn: false, 
-            page: "login",
+        this.setState(state => {
+            return {
+                cart: [],
+                cartTotalItems: 0,
+                cartSubTotal: "",
+                cartSH: "",
+                cartDiscount: "",
+                cartTotal: "",
+                page: "login",
+                loggedIn: false,
+                promotion: "",
+                promotionError: "",
+                promotionApplied: "",
+                addressTitle: "",
+                legalName: "", 
+                shippingAddress: "",
+                shippingZip: "",
+                country: "",
+                state: "",
+                city: "",
+                cell: "",
+                telephone: "",
+                cardholderName: "",
+                cardNumber: "",
+                cardType: "",
+                expMonth: "",
+                expYear: "",
+                cvv: ""
+            }
         });
     }
 
@@ -629,6 +658,8 @@ export class App extends Component {
             case "shop":
                 return <Shop 
                             addToCart={this.addToCart} 
+                            removeFromCart={this.removeFromCart} 
+                            findCartItem={this.findCartItem} 
                         />  
         
             case "cart":
