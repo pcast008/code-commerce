@@ -21,6 +21,7 @@ export class Confirmation extends Component {
                             cartDiscount={this.props.cartDiscount}
                             cartTotal={this.props.cartTotal}
                             cardType={this.props.cardType}
+                            cardNumber={this.props.cardNumber}
                         />
                     </div>
                 </div>     

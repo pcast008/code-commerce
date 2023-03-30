@@ -1,13 +1,13 @@
 .card-icon-confirmation {
-    width: 50px;
-    height: 50px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    gap: 1rem;
 }
 
 .card-icon-confirmation img {
     width: 100%;
+    width: 50px;
+    height: 50px; 
 }
 
 .confirmation-details {
@@ -18,7 +18,8 @@
 
 .credit-card-details {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    justify-content: center;
     gap: 1rem;
 }
 
@@ -30,4 +31,10 @@
 
 .details-text {
     font-size: .8rem;
+}
+
+.shipping-payment {
+    display: flex;
+    flex-direction: column;
+    gap: .25rem;
 }

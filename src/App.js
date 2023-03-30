@@ -747,7 +747,8 @@ export class App extends Component {
                             cartSH={this.state.cartSH}
                             cartDiscount={this.state.cartDiscount}
                             cartTotal={this.state.cartTotal}   
-                            cardType={this.state.cardType}                              
+                            cardType={this.state.cardType}      
+                            cardNumber={this.state.cardNumber}                        
                         />
             default:
                 break;
