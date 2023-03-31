@@ -2,10 +2,6 @@
     align-items: center;
 }
 
-.navbar-brand:hover {
-    cursor: pointer;
-}
-
 .bi-code-square {
     pointer-events: none;
 }
@@ -36,6 +32,7 @@
     display: flex;
     align-items: center;
     flex-wrap: wrap;
+    gap: 1rem;
 }
 
 .navbar-nav {
@@ -43,4 +40,16 @@
     align-items: center;
     flex-direction: row;
     gap: 1rem;
+}
+
+.navbar button {
+    all: unset;
+    color: #F8F9FA;
+    cursor: pointer;
+    
+}
+
+.nav-link.active {
+    --bs-navbar-active-color: #6ea8fe;
+    color: var(--bs-navbar-active-color);
 }

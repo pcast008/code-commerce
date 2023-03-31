@@ -28,7 +28,7 @@ export class ConfirmationSummary extends Component {
                     <div className="confirmation-details-shipping">
                         <div className="confirmation-details">
                             <div className="summary-title">SHIPPING</div>
-                            <div className="details-text"><a href="#">View Shipping Details</a></div>
+                            <div className="details-text"><button>View Shipping Details</button></div>
                         </div>        
                         {parseInt(this.props.cartSH) === 5 ? <div><span>STANDARD</span> Delivery in 4-6 Business Days</div> : <div><span>EXPRESS</span> Delivery in 1-3 Business Days</div>}        
                     </div>
@@ -36,7 +36,7 @@ export class ConfirmationSummary extends Component {
                     <div className="shipping-payment">
                         <div className="confirmation-details">
                             <div className="summary-title">PAYMENT</div>
-                            <div className="details-text"><a href="#">View Payment Details</a></div>
+                            <div className="details-text"><button>View Payment Details</button></div>
                         </div> 
                         <div className="credit-card-details">
                             <div className="card-icon-confirmation">
@@ -48,7 +48,7 @@ export class ConfirmationSummary extends Component {
                     </div>
                 </div>     
             </div>
-        )
+        )  
     }
 }
 

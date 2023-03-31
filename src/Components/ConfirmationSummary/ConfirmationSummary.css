@@ -31,6 +31,14 @@
 
 .details-text {
     font-size: .8rem;
+    
+}
+
+.details-text button {
+    all: unset;
+    cursor: pointer;
+    text-decoration: underline;
+    color: #0d6efd;
 }
 
 .shipping-payment {

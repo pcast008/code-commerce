@@ -32,7 +32,7 @@ export class App extends Component {
         cartDiscount: "",
         cartTotal: "",
         page: "login",
-        loggedIn: true,
+        loggedIn: false,
         promotion: "",
         promotionError: "",
         promotionApplied: "",
